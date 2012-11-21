@@ -15,8 +15,7 @@
  */
 
 var petfinder = new function() {
-	// TODO: Update for production proxy domain name.
-	var proxyUrl = 'http://localhost:8000/';
+	var proxyUrl = 'http://petfinderproxy.herokuapp.com/';
  	
 	var apiKey = '<YOUR_API_KEY>';
 	var apiSecret = '<YOUR_API_SECRET>';

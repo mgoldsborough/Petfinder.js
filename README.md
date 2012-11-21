@@ -2,7 +2,7 @@ Petfinder.js
 ------------
 Javascript library to interact with the Petfinder API through a proxy.
 
-Currently we use our own jsonp proxy to provide cross domain requests.  This will be open sourced eventually...
+We use our own proxy to provide cross domain requests via JSON-P.  This will be open sourced eventually...
 
 Read the docs here: http://www.petfinder.com/developers/api-docs
 
