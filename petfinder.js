@@ -22,17 +22,17 @@ var petfinder = new function() {
 	
 	var authKey;
 	
-	this.getPet = function(callback, petId) {
+	this.getPet = function(petId, callback) {
 		var queryParams = {
 			'key': apiKey,
 			'id': petId,
 			'format': 'json',
 		}
 		
-		hit(callback, 'pet.get', queryParams);
+		hit('pet.get', queryParams, callback);
 	}
 	
-	this.findPet = function(callback, location, animal, breed, size, sex, age, offset, count, output) {
+	this.findPet = function(location, animal, breed, size, sex, age, offset, count, output, callback) {
 		var queryParams = {
 			'key': apiKey,
 			'format': 'json'
@@ -65,7 +65,7 @@ var petfinder = new function() {
 		if(output)
 			queryParams['output'] = output;
 		
-		hit(callback, 'pet.find', queryParams);
+		hit('pet.find', queryParams, callback);
 	}
 	
 	this.authenticate = function(callback) {
@@ -74,10 +74,10 @@ var petfinder = new function() {
 			'format': 'json',
 		}
 		
-		hit(callback, 'auth.getToken', queryParams);
+		hit('auth.getToken', queryParams, callback);
 	};
 	
-	var hit = function(callback, method, queryParams) {
+	var hit = function(method, queryParams, callback) {
 		var queryString = genQueryString(queryParams);
 		console.debug('Query String: ' + queryString);
 		

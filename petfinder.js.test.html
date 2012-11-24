@@ -30,20 +30,17 @@
 	<script src="jquery.md5.js"></script>
 	<script src="petfinder.js"></script>
 	
-	<script>
-		var getPetCallback = function(data) {
-			console.debug('Get Pet Response:');
-			console.dir(data);
-		}
-		
-		var findPetCallback = function(data) {
-			console.debug('Find Pet Response:');
-			console.dir(data);
-		}
-		
+	<script>		
 		$(function() {
-			petfinder.getPet(getPetCallback, '24664659');
-			petfinder.findPet(findPetCallback, '11731');
+			petfinder.getPet('24664659', function(data) {
+				console.debug('Get Pet Response:');
+				console.dir(data);
+			});
+			
+			petfinder.findPet('11731', null, null, null, null, null, null, null, null, function(data) {
+				console.debug('Find Pet Response:');
+				console.dir(data);
+			});
 		});
 	</script>
 	
